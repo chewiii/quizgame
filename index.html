@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./style.css"> <!-- Include your CSS file -->
+    <script src="https://kit.fontawesome.com/4018b1ff6d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+        <audio id="background-audio">
+            <source src="./background-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    
+        <!-- Volume control button -->
+        <div id="volume-control">
+            <i id="volume-icon" class="fas fa-volume-mute"></i>
+        </div>
+        <div id="start-screen">
+            <h1 class="heading">Animal Quiz</h1>
+            <div class="settings">
+                <select id="quiz-type">
+                    <option value="multiple-choice">Multiple Choice</option>
+                    <option value="true-false">True or False</option>
+                    <option value="identification">Identification</option>
+                </select>
+                <select id="time-limit">
+                    <option value="5">5 seconds</option>
+                    <option value="10">10 seconds</option>
+                    <option value="15">15 seconds</option>
+                    <option value="20">20 seconds</option>
+                    <option value="25">25 seconds</option>
+                </select>
+                <button onclick="startQuiz(), resetTimer()" class="btn">Start Quiz</button>
+            </div>
+        </div>
+
+        <div id="quiz" style="display: none;">
+            <h2 id="question"></h2>
+            <div id="image"><img src="timer-icon.svg"><p id="timer"><span id="time"></span></p></div>
+            <p id="score">Score: <span id="score-value">0</span>/5</p>
+            <div id="options"></div>
+            <p id="result"></p>
+            <p id="correct-answer" style="display: none;"></p>
+
+            <button id="next-button" onclick="nextQuestion()" style="display: none;" class="btn">Next</button>
+            <button id="submit-button" onclick="submitQuiz()" style="display: none;" class="btn">Submit</button>
+            <button onclick="resetQuiz()" class="btn">Reset</button>
+        </div>
+    </div>
+    <script src="./script.js"></script> <!-- Include your JavaScript file -->
+</body>
+</html>
